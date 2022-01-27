@@ -1,54 +1,41 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-     <!-- Font Awesome -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-     <script src="js/bootstrap.min.js"></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Université du Havre</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Diplome
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                      <li><a class="dropdown-item" href="Licence.html">Licence</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-      </header>
+<?php include_once('header.php');?>
       <h1 class="m-3">Licence DASI</h1>
-      <h4 class="ms-5"> Développement et Administration de Sites Internet</h4>
+      <h4 class="ms-4"> Développement et Administration de Sites Internet</h4>
+      <p class="ms-5">La licence est accéssible après un bac +2, dans certains cas pour une reconversion professionnelle. Elle dure un an et possède une période de stage de 15 semaines.</p>
+      <hr>
       <div class="container m-5">
         <div class="row align-items-center">
           <div class="col">
-            <a class="text-dark" href="#modalité">Modalités et critères d'admission </a>
+            <a class="text-dark" href="#modalité">Modalités et critères d'admission</a>
           </div>
           <div class="col">
-            Métier accéssible
+            <a class="text-dark" href="#metier">Métier accéssible</a>
           </div>
           <div class="col">
             <a class="text-dark" href="#contenu"> Contenu de la formation</a>
           </div>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-1 text-end">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+          <div class="col-2">
+            <strong>Durée</strong>
+            <br>
+            <p>1 an</p>
+          </div>
+          <div class="col-1 text-end">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="col-2">
+            <strong>Localisation</strong>
+            <br>
+            <p>Site de Caucriauville</p>
+          </div>
+          
         </div>
       </div>
       <h3 class="ms-4">Modalités et critères d'admission</h3>
@@ -70,7 +57,7 @@
           </div>
         </div>
       </div>
-      <h3 class="ms-4">Métiers accéssibles</h3>
+      <h3 class="ms-4" id="metier">Métiers accéssibles</h3>
       <div class="container mt-4">
         <div class="row align-items-start text-center">
           <div class="col">
