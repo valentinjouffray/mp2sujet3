@@ -1,13 +1,6 @@
-<?php include_once('header.php');?>
-<?php 
-try {
-	//Connection à la bdd via le pdo
-	$mysqlClient = new PDO('mysql:host=localhost;dbname=projetmp2;charset=utf8', 'root', '');
-}
-catch(Exception $e) {
-	//En cas d'erreur :
-	die('Erreur : '.$e->getMessage());
-}
+<?php
+include_once('header.php');
+include_once('connexion.php');
 
 $sqlQuery = 'SELECT * FROM stage'; // On récupère tous les stages disponibles
 $statement = $mysqlClient->prepare($sqlQuery);
@@ -35,7 +28,7 @@ $stages = $statement->fetchAll();
 <?php
 foreach ($stages as $stage){
 	?>
-	<a style="text-decoration: none; color: black;" href="#"> <!-- Cliquer dessus affiche la fiche du stage -->
+	<a style="text-decoration: none; color: black;" href="<?php echo "afficherStage.php?stage_id=". $stage['stage_id'] ?>"> <!-- Cliquer dessus affiche la fiche du stage -->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm" style="outline-style: solid;"><?php echo $stage['stage_libelle'] ?></div>
