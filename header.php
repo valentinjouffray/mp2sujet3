@@ -1,3 +1,4 @@
+<?php include_once('bdd_connect.php')?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,7 +28,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                       <li><a class="dropdown-item" href="licence.php">Licence DASI</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="but_info.php">BUT Informatique</a></li>
                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                   </li>
@@ -35,7 +36,15 @@
                     <a class="nav-link" aria-current="page" href="#">LITIS</a>
                   </li>
                 </ul>
+                
               </div>
             </div>
+            <a class="btn btn-danger me-1" href="disconnect.php"><i class="fa-solid fa-circle-xmark"></i></a>
+            <?php if(empty($_SESSION['idUtilisateur'])){
+              ?><a class="btn btn-success mx-1" href="login.php">Connexion</a><?php
+            }else{
+            ?>
+            <a class="btn btn-success mx-1" href="profil.php"><i class="fa-solid fa-address-card"></i></a>
+            <?php } ?>
           </nav>
       </header>
