@@ -11,8 +11,19 @@
      <!-- Font Awesome -->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
      <script src="js/bootstrap.min.js"></script>
+     <!-- leafmap -->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 </head>
-<body>
+<style>
+    #map { height: 220px; }
+</style>
+<body onload="initmap()">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -33,7 +44,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">LITIS</a>
+                    <a class="nav-link" aria-current="page" href="litis.php">LITIS</a>
                   </li>
                 </ul>
                 
