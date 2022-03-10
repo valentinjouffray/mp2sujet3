@@ -46,6 +46,9 @@ foreach ($stages as $stage){
 	<a class="btn btn-primary" style="margin-top: 20px;" href="creationStage.php" class="button">Ajouter un stage</a>
 </div>
 </main>
+<?php 
+include_once('footer.php');
+ ?>
 <!--
 <footer class="page-footer font-small blue pt-4">
   <div class="footer-copyright text-center py-3">LPRO DASI 2021/2022</div>
