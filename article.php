@@ -1,6 +1,7 @@
 <?php 
-include_once('header.php');
+
 include_once('bdd_connect.php');
+
     try{
         $bdd = getNewPDO();
         $sql = $bdd->prepare("CALL proc_get_article();");
@@ -11,7 +12,7 @@ include_once('bdd_connect.php');
     $perm = $_SESSION['perm'];
     if ($perm ==""){
         $perm = 0;
-    }
+    }include_once('header.php');
 ?>
 <div class="container mt-2 mb-2">
     <h1 class="text-center">Les dernières actualités de l'IUT</h1>
@@ -19,7 +20,7 @@ include_once('bdd_connect.php');
                         ?> <br><a href="newArticle.php" class="btn btn-success mt-3 mb-2">Ajouté un article</a><?php
                     }else{
                     }?>
-<?php while ($row_get_article = $sql->fetch(PDO::FETCH_OBJ)) { ?>
+    <?php while ($row_get_article = $sql->fetch(PDO::FETCH_OBJ)) { ?>
           <div class="row align-items-start">
             <hr>
             <h5 class="fw-bold"><?php echo  $row_get_article->titre ?></h5>

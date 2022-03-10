@@ -1,6 +1,6 @@
 <?php
 include_once('bdd_connect.php');    
-include_once('header.php');
+
 if (isset($_POST['CgMdp'])){
     $Amdp = sha1($_POST['AncienMdp']);
     if ($Amdp == $_SESSION['psw'] && $_POST['nvMdp'] == $_POST['RnvMdp'] && !empty($_POST['nvMdp'])){
@@ -43,7 +43,7 @@ if (isset($_POST['CgProfil'])){
     }catch(PDOException $e) {
         $erreur = $e;
     }
-}
+}include_once('header.php');
 if (empty($_SESSION['idUtilisateur'])){?>
     <h3 class="text-center">Vous n'êtes pas connecter ou ne possedez pas de compte. <br>L'accès à cette page vous est restreint</h3>
     <p class="text-center mt-3">Connectez vous <a href="login.php">ici</a>

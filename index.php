@@ -1,4 +1,5 @@
-<?php include_once('header.php'); 
+<?php 
+
 include_once('bdd_connect.php');  
     try{
         $bdd = getNewPDO();
@@ -7,7 +8,7 @@ include_once('bdd_connect.php');
     }catch(PDOException $e) {
         $erreur = $e;
     }
-
+include_once('header.php'); 
 ?>
 <h2 class="mt-3 text-center">Bienvenue sur le site de l'université du Havre</h2>
 <hr>
@@ -18,7 +19,6 @@ include_once('bdd_connect.php');
               <br>
               <p><a target="_blank" href="https://www.messervices.etudiant.gouv.fr/envole/"><img src="src/crous.png" style="width: 100px;" alt="..." ></a> Tu es un élève boursier en recherche d'un logement ? Le crous peut vous aider dans vos recherches.</p>  
           </div>
-
           <div class="col-3 text-center">
                 <div div class="card" style="width: 25rem;">
                     <img src="src/litis.jpg" class="card-img-top" alt="litis">
@@ -41,7 +41,7 @@ include_once('bdd_connect.php');
               <div class="row">
                 <div class="col-6"><?php echo $row_get_article->descArticle ?><br>
                 <a href="lecture.php?id=<?php echo $row_get_article->idArticle?>" class="btn btn-success mt-3">Voir la suite de l'actualité</a></div>
-                <div class="col-6"><img src="src/ukraine.jpg" alt="Université Le havre pour l'Ukraine"></div>
+                <div class="col-6"><img src="<?php echo $row_get_article->img ?>" alt="Université Le havre pour l'Ukraine"></div>
               </div>
             </div>
           </div>
