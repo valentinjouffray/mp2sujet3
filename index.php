@@ -1,13 +1,24 @@
-<?php include_once('header.php'); ?>
+<?php include_once('header.php'); 
+include_once('bdd_connect.php');  
+    try{
+        $bdd = getNewPDO();
+        $sql = $bdd->prepare("CALL proc_get_last_article();");
+        $sql->execute();
+    }catch(PDOException $e) {
+        $erreur = $e;
+    }
+
+?>
 <h2 class="mt-3 text-center">Bienvenue sur le site de l'université du Havre</h2>
 <hr>
-<div class="container mt-4">
-        <div class="row align-items-start">
+  <div class="container mt-4">
+    <div class="row align-items-start">
           <div class="col-9">
-          <p><a target="_blank" href="https://www.youtube.com/watch?v=AYOtp7HNoWs"><img src="src/ytb.png" style="width: 100px;" alt="..." ></a> Stéphane Lauwick, directeur de l'iut du Havre vous parle du B.U.T, la fillière remplaçante du D.U.T</p>
-            <br>
-            <p><a target="_blank" href="https://www.messervices.etudiant.gouv.fr/envole/"><img src="src/crous.png" style="width: 100px;" alt="..." ></a> Tu es un élève boursier en recherche d'un logement ? Le crous peut vous aider dans vos recherches.</p>  
-        </div>
+              <p><a target="_blank" href="https://www.youtube.com/watch?v=AYOtp7HNoWs"><img src="src/ytb.png" style="width: 100px;" alt="..." ></a> Stéphane Lauwick, directeur de l'iut du Havre vous parle du B.U.T, la fillière remplaçante du D.U.T</p>
+              <br>
+              <p><a target="_blank" href="https://www.messervices.etudiant.gouv.fr/envole/"><img src="src/crous.png" style="width: 100px;" alt="..." ></a> Tu es un élève boursier en recherche d'un logement ? Le crous peut vous aider dans vos recherches.</p>  
+          </div>
+
           <div class="col-3 text-center">
                 <div div class="card" style="width: 25rem;">
                     <img src="src/litis.jpg" class="card-img-top" alt="litis">
@@ -18,15 +29,32 @@
                     </div>
                 </div>
           </div>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="container mt-2 mb-2">
+    <h1 class="text-center">Les dernières actualités de l'IUT</h1>
+    <?php while ($row_get_article = $sql->fetch(PDO::FETCH_OBJ)) { ?>
+          <div class="row align-items-start">
+            <hr>
+            <h5 class="fw-bold"><?php echo  $row_get_article->titre ?></h5>
+            <div class="container">
+              <div class="row">
+                <div class="col-6"><?php echo $row_get_article->descArticle ?><br>
+                <a href="lecture.php?id=<?php echo $row_get_article->idArticle?>" class="btn btn-success mt-3">Voir la suite de l'actualité</a></div>
+                <div class="col-6"><img src="src/ukraine.jpg" alt="Université Le havre pour l'Ukraine"></div>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+        <a href="article.php" class="text-center w-50 btn btn-primary mt-3">Voir toutes les actualité</a></div>
+  </div>
       <br>
       <h4 class="ms-2">Les emplacements des IUT </h4>
       <p class="ms-4 mt-3">Site Caucriauville : Rue Boris Vian, Caucriauville<br>
         Site Frissard : Quai Frissard, Dock Vauban <br>
         Site Lebon : 25 rue Philippe Lebon</p>
       <div id="map"></div>
-      <?php echo $_SESSION['perm'];?>
+      
       <br>
 </body>
 <script>

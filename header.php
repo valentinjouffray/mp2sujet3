@@ -46,6 +46,9 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="litis.php">LITIS</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="article.php">Articles</a>
+                  </li>
                 </ul>
                 
               </div>
