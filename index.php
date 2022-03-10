@@ -26,6 +26,7 @@
         Site Frissard : Quai Frissard, Dock Vauban <br>
         Site Lebon : 25 rue Philippe Lebon</p>
       <div id="map"></div>
+      <?php echo $_SESSION['perm'];?>
       <br>
 </body>
 <script>

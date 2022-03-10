@@ -16,6 +16,7 @@ if(isset($_POST['connexion'])){
         $_SESSION['prenom'] = $row_get_connexion->prenomUtilisateur;
         $_SESSION['email'] = $row_get_connexion->emailUtilisateur;
         $_SESSION['psw'] = $row_get_connexion->pswUtilisateur;
+        $_SESSION['perm'] = $row_get_connexion->perm;
         header('Location:index.php');
     }else{
         $erreur = "Identifiant et/ou mot de passe incorrect !";
