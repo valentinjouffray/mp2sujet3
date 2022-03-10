@@ -1,0 +1,16 @@
+.description{
+	background-color: #A6A6A6;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-radius: 1em;
+}
+
+.solid-outline{
+	outline-style: solid;
+}
+
+main{
+	padding-top: 24px;
+}

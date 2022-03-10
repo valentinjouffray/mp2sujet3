@@ -2,13 +2,14 @@
 include_once('header.php');
 include_once('connexion.php');
 
-$sqlQuery = 'SELECT * FROM stage'; // On récupère tous les stages disponibles
+$sqlQuery = 'SELECT * FROM `stage` WHERE stage_disponible = 1'; // On récupère tous les stages disponibles
 $statement = $mysqlClient->prepare($sqlQuery);
 $statement->execute();
 $stages = $statement->fetchAll();
 
 ?>
-<h1>La liste des stages disponibles</h1>
+<main>
+<h1 style="margin-left: 10%; margin-bottom: 0.7em;">La liste des stages disponibles</h1>
 <div class="container" style="background-color: grey;">
 	<div class="row">
 		<div class="col-sm" style="outline-style: solid;">
@@ -28,16 +29,25 @@ $stages = $statement->fetchAll();
 <?php
 foreach ($stages as $stage){
 	?>
-	<a style="text-decoration: none; color: black;" href="<?php echo "afficherStage.php?stage_id=". $stage['stage_id'] ?>"> <!-- Cliquer dessus affiche la fiche du stage -->
-		<div class="container">
+	<div class="container">
+		<a style="text-decoration: none; color: black;" href="<?php echo "afficherStage.php?stage_id=". $stage['stage_id'] ?>"> <!-- Cliquer dessus affiche la fiche du stage -->
 			<div class="row">
-				<div class="col-sm" style="outline-style: solid;"><?php echo $stage['stage_libelle'] ?></div>
-				<div class="col-sm" style="outline-style: solid;"><?php echo $stage['stage_entreprise'] ?></div>
-				<div class="col-sm" style="outline-style: solid;"><?php echo $stage['stage_date_debut'] ?></div>
-				<div class="col-sm" style="outline-style: solid;"><?php echo $stage['stage_date_fin'] ?></div>
+				<div class="col-sm solid-outline"><?php echo $stage['stage_libelle'] ?></div>
+				<div class="col-sm solid-outline"><?php echo $stage['stage_entreprise'] ?></div>
+				<div class="col-sm solid-outline"><?php echo $stage['stage_date_debut'] ?></div>
+				<div class="col-sm solid-outline"><?php echo $stage['stage_date_fin'] ?></div>
 			</div>
-		</div>
-	</a>
+		</a>
+	</div>
 	<?php
 }
 ?>
+<div class="container">
+	<a class="btn btn-primary" style="margin-top: 20px;" href="creationStage.php" class="button">Ajouter un stage</a>
+</div>
+</main>
+<!--
+<footer class="page-footer font-small blue pt-4">
+  <div class="footer-copyright text-center py-3">LPRO DASI 2021/2022</div>
+</footer>
+-->
