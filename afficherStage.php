@@ -13,8 +13,6 @@ $perm = $_SESSION['perm'];
     }include_once('header.php');
 ?>
 
-
-
 <main>
 	<div class="container">
 		<h1>Présentation du stage</h1>
@@ -34,8 +32,7 @@ $perm = $_SESSION['perm'];
 				
 		</h5>
 		<a href="stage.php">Retourner à la liste des stages</a>
-		<?php if($perm ==1){
-                        ?> <form action="modifierStage.php" method="POST">
+		<?php if($perm ==1){?> <form action="modifierStage.php" method="POST">
 			<input type="hidden" name="stage_id" value="<?php echo $stages['stage_id']; ?>">
 			<input type="hidden" name="stage_libelle" value="<?php echo $stages['stage_libelle']; ?>">
 			<input type="hidden" name="stage_description" value="<?php echo $stages['stage_description']; ?>">

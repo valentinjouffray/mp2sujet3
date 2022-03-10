@@ -57,8 +57,3 @@ foreach ($stages as $stage){
 <?php 
 include_once('footer.php');
  ?>
-<!--
-<footer class="page-footer font-small blue pt-4">
-  <div class="footer-copyright text-center py-3">LPRO DASI 2021/2022</div>
-</footer>
--->
