@@ -97,7 +97,7 @@ if (empty($_SESSION['idUtilisateur'])){?>
                 </div>
             <?php }
             ?>
-            <button type="submit" id="CgMdp" name="CgMdp" class=" mt-2 btn btn-primary">Changer le mot de passe</button>
+            <button type="submit" id="CgMdp" name="CgMdp" class="mt-3 btn btn-primary">Changer le mot de passe</button>
                 </div>
             </div>
            

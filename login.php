@@ -39,22 +39,22 @@ if(isset($_POST['connexion'])){
      <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h3 class="text-center">Page de connexion IUT du havre</h3>
+    <h3 class="text-center mt-5">Page de connexion IUT du havre</h3>
     <form method="POST">
         <div class="container">
             <div class="row m-5">
                 <div class="col"></div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card bg-secondary">
                         <div class="card-body">
-                        <h5 class="card-title">Se connecter</h5>
+                        <h5 class="card-title text-white  mb-4">Se connecter</h5>
                             <div class="container">
                                 <div class="row">
                                     <div class="col mb-2"><input type="text" class="box-input" name="email" placeholder="Email" required /></div>
                                     <div class="col"><input type="password" class="box-input" placeholder="Mot de passe" name="psw" required/></div>
                                 </div>
-                                <div class="col m-5"><button type="submit" name="connexion" id="connexion" class="box-button"> S'inscrire</button></div>
-                                <p class="box-register">Pas encore inscrit? <a href="register.php">Inscrivez-vous ici</a></p>
+                                <div class="col mt-3 ms-2 mb-2"><button type="submit" name="connexion" id="connexion" class="box-button btn btn-primary ">Connexion</button></div>
+                                <p class="box-register">Pas encore inscrit? <a class="text-dark fw-bold" href="register.php">Inscrivez-vous ici</a></p>
                                 <?php
                                     if (isset($erreur)) { ?>
                                         <div class="container alert alert-danger mt-3" role="alert">

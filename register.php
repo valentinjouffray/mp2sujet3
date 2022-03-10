@@ -33,15 +33,15 @@ if(isset($_POST['enregistrer'])){
      <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h3 class="text-center">Page d'enregistrement IUT du havre</h3>
+    <h3 class="text-center mt-5">Page d'enregistrement IUT du havre</h3>
     <form method="POST">
         <div class="container">
             <div class="row m-5">
                 <div class="col"></div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card bg-secondary">
                         <div class="card-body">
-                        <h5 class="card-title">S'inscrire</h5>
+                        <h5 class="card-title mb-4 text-white">S'inscrire</h5>
                             <div class="container">
                                 <div class="row">
                                     <div class="mb-2"><input type="text" class="box-input" name="email" placeholder="Email" required /></div>
@@ -49,8 +49,8 @@ if(isset($_POST['enregistrer'])){
                                     <div class="mb-2"><input type="text" class="box-input" name="nom" placeholder="Nom" required /></div>
                                     <div class="mb-2"><input type="password" class="box-input" placeholder="Mot de passe" name="psw" required/></div>
                                 </div>
-                                <div class="col m-5"><button type="submit" name="enregistrer" id="enregistrer" class="box-button"> S'inscrire</button></div>
-                                <p class="box-register">Déjà inscrit? <a href="login.php">Connectez-vous ici</a></p>
+                                <div class="col mt-3 ms-2 mb-2"><button type="submit" name="enregistrer" id="enregistrer" class="box-button btn btn-primary"> S'inscrire</button></div>
+                                <p class="box-register">Déjà inscrit? <a class="text-dark fw-bold"href="login.php">Connectez-vous ici</a></p>
                                 <?php
                                     if (isset($valid)) { ?>
                                         <div class="container alert alert-success mt-3" role="alert">
